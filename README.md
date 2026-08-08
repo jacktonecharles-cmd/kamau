@@ -386,3 +386,4 @@ python manage.py createsuperuser   :: create an admin login
 python manage.py changepassword admin   :: reset the admin password
 ```
 "# kamau" 
+"# kamau" 
