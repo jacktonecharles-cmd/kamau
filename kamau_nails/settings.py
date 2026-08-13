@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 import os
 from pathlib import Path
 
+import whitenoise
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -21,8 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-n#q)_96oh^7dysyf+yh^+xf^yqedl*vx!9t%+sablj0ckivy13'
-
+SECRET_KEY = 'django-insecure-!@#$%&*()_+your-secret-key-here-1234567890'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -127,5 +128,9 @@ MEDIA_ROOT = BASE_DIR / 'media'
 # Prints emails to the console instead of actually sending them.
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 DEFAULT_FROM_EMAIL = 'Kamau Nails <no-reply@kamaunails.com>'
-SALON_ADMIN_EMAIL = 'jacktonecharles@gmail.com'
-SALON_PHONE = '0740729339'
+SALON_ADMIN_EMAIL = 'kk41397441@gmail.com'
+SALON_PHONE = '0796 592972'
+# settings.py
+
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+

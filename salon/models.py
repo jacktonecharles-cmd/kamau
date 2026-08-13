@@ -1,5 +1,10 @@
 from django.db import models
 from django.utils import timezone
+from django.db import models
+
+class Service(models.Model):
+    id = models.BigAutoField(primary_key=True)
+    # ... your other fields
 
 
 class ServiceCategory(models.Model):
