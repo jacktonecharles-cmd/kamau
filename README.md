@@ -390,3 +390,4 @@ python manage.py changepassword admin   :: reset the admin password
 "# kamau-nails" 
 "# kamau-nails" 
 "# kamaunails" 
+"# kamau" 
