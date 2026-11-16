@@ -1,4 +1,5 @@
 from django.contrib import admin
+
 from .models import (
     ServiceCategory, Service, Technician, GalleryImage,
     Testimonial, Booking, PaymentProof, ContactMessage, NewsletterSubscriber,
@@ -35,6 +36,7 @@ class GalleryImageAdmin(admin.ModelAdmin):
 class TestimonialAdmin(admin.ModelAdmin):
     list_display = ('client_name', 'rating', 'is_published')
     list_filter = ('is_published', 'rating')
+    list_editable = ('is_published',)
 
 
 @admin.register(Booking)
@@ -43,12 +45,14 @@ class BookingAdmin(admin.ModelAdmin):
     list_filter = ('status', 'date', 'service')
     search_fields = ('full_name', 'email', 'phone')
     list_editable = ('status',)
+    list_select_related = ('service', 'technician')
     date_hierarchy = 'date'
 
 
 @admin.register(PaymentProof)
 class PaymentProofAdmin(admin.ModelAdmin):
-    list_display = ('customer_name', 'service_name', 'amount_paid', 'transaction_code', 'is_verified', 'submitted_at')
+    list_display = ('customer_name', 'service_name', 'amount_paid',
+                    'transaction_code', 'is_verified', 'submitted_at')
     list_filter = ('is_verified',)
     list_editable = ('is_verified',)
     search_fields = ('customer_name', 'transaction_code', 'phone')

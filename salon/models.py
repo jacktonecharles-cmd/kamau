@@ -1,10 +1,5 @@
 from django.db import models
 from django.utils import timezone
-from django.db import models
-
-class Service(models.Model):
-    id = models.BigAutoField(primary_key=True)
-    # ... your other fields
 
 
 class ServiceCategory(models.Model):
@@ -122,8 +117,11 @@ class Booking(models.Model):
 
 
 class PaymentProof(models.Model):
-    """Manual payment verification workflow (send money -> upload proof -> admin approves)."""
-    booking = models.ForeignKey(Booking, on_delete=models.CASCADE, related_name='payment_proofs', null=True, blank=True)
+    """Manual payment workflow: send money -> upload proof -> admin approves."""
+    booking = models.ForeignKey(
+        Booking, on_delete=models.CASCADE, related_name='payment_proofs',
+        null=True, blank=True
+    )
     customer_name = models.CharField(max_length=150)
     phone = models.CharField(max_length=30)
     service_name = models.CharField(max_length=150)
